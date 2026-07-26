@@ -415,15 +415,25 @@ app.delete("/registrations", async (req, res) => {
   }
 });
 
+// Only listen when run directly (`node server.js`). Requiring this file from a test
+// must not bind a port, or the test run never exits.
+if (require.main === module) {
+  startServer();
+}
+
+module.exports = { app, getRegistryData, fetchAndValidateInstanceMetadata };
+
 // Start server
-app.listen(PORT, () => {
-  console.log(`Registry server running on http://localhost:${PORT}`);
-  console.log(`Available endpoints:`);
-  console.log(`  POST /registrations - Register instance`);
-  console.log(`  GET /instances - Get verified instances`);
-  console.log(`  GET /registrations - Get registration status`);
-  console.log(
-    `  POST /registrations/refresh - Trigger metadata refresh for instance`,
-  );
-  console.log(`  DELETE /registrations - Remove instance registration`);
-});
+function startServer() {
+  return app.listen(PORT, () => {
+    console.log(`Registry server running on http://localhost:${PORT}`);
+    console.log(`Available endpoints:`);
+    console.log(`  POST /registrations - Register instance`);
+    console.log(`  GET /instances - Get verified instances`);
+    console.log(`  GET /registrations - Get registration status`);
+    console.log(
+      `  POST /registrations/refresh - Trigger metadata refresh for instance`,
+    );
+    console.log(`  DELETE /registrations - Remove instance registration`);
+  });
+}
