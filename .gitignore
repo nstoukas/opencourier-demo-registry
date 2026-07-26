@@ -4,3 +4,7 @@ node_modules/
 *.log
 
 /src/generated/prisma
+
+# aiflow pipeline artifacts (see ../aiflow.sh) — working files, not source
+.aiflow/
+plan.md
