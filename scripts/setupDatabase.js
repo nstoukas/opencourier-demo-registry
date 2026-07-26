@@ -19,7 +19,7 @@ async function setupDatabase() {
         name VARCHAR(255) NOT NULL,
         link VARCHAR(1024) NOT NULL UNIQUE,
         websocket_link VARCHAR(1024) NOT NULL,
-        region GEOMETRY(FeatureCollection, 4326),
+        region GEOMETRY(Geometry, 4326),
         image_url VARCHAR(1024),
         user_count INTEGER DEFAULT 0,
         status VARCHAR(50) DEFAULT 'pending',

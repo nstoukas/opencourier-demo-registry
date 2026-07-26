@@ -150,7 +150,7 @@ app.post("/registrations", async (req, res) => {
 
 function getRegistryData(metadata) {
   // Accepts metadata (from POST or /metadata) and returns all the expected columns as one shape
-  const details = metadata.details;
+  const details = metadata.details ?? {};
 
   return {
     name: details.name ?? metadata.name,
