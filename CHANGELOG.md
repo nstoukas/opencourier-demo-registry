@@ -29,3 +29,8 @@ Everything below sits on top of upstream `main` on the branch `fix/postgis-and-m
 ## Housekeeping — `c0f7169`
 
 - Ignored pipeline artifacts (`.aiflow/`, `plan.md`).
+
+## AI context files
+
+- `AGENTS.md`, context for AI coding tools that points at the co-op workspace rulebook, and a
+  `CLAUDE.md` that imports it.
