@@ -5,6 +5,6 @@ node_modules/
 
 /src/generated/prisma
 
-# aiflow pipeline artifacts (see ../aiflow.sh) — working files, not source
+# local records from the retired aiflow.sh pipeline (deleted 2026-09-30); kept, not source
 .aiflow/
 plan.md
